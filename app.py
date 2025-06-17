@@ -29,7 +29,7 @@ def main():
 
         if boton_enviar and num_col and num_fila:
             df = pd.read_excel(archivo, sheet_name='2 PO & Payment Details', skiprows=3, nrows=int(num_fila),
-                               usecols=[1, 3, int(num_col) + 9])
+                               usecols=[1, 3, int(num_col) + 9], 34)
             df_filtrado = df.groupby(['Area', 'Trade']).sum()
             ndf = df_filtrado.style.format(precision=3, thousands=".", decimal=",")
             st.table(ndf)
